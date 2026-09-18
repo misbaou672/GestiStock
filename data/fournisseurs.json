@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ModeFrance",
+    "contact": "Aya CHEGDALI",
+    "email": "aya@ModeFrance.fr",
+    "phone": "+33 4 90 12 34 56",
+    "products": ["VET-001", "VET-002"]
+  },
+
+  {
+    "name": "FoodSupply",
+    "contact": "Lina MOUADILI",
+    "email": "lina@foodsupply.fr",
+    "phone": "+33 2 03 04 05 06",
+    "products": ["ALIM-001", "ALIM-002", "ALIM-003"]
+  },
+
+  {
+    "name": "Hamisaka",
+    "contact": "misbaou Diallo",
+    "email": "misbaou@hamisaka.com",
+    "phone": "+33 1 02 03 04 05",
+    "products": ["ELEC-001", "ELEC-002", "ELEC-003", "ELEC-004"]
+  }
+
+]

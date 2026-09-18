@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Laptop Pro 15",
+    "reference": "ELEC-001",
+    "quantity": 12,
+    "price": 999.99,
+    "category": "Électronique"
+  },
+  {
+    "name": "Souris sans fil",
+    "reference": "ELEC-002",
+    "quantity": 45,
+    "price": 29.99,
+    "category": "Électronique"
+  },
+  {
+    "name": "Clavier mécanique",
+    "reference": "ELEC-003",
+    "quantity": 3,
+    "price": 89.99,
+    "category": "Électronique"
+  },
+  {
+    "name": "Écran 27 pouces",
+    "reference": "ELEC-004",
+    "quantity": 8,
+    "price": 349.99,
+    "category": "Électronique"
+  },
+  {
+    "name": "Jus d'orange bio",
+    "reference": "ALIM-002",
+    "quantity": 4,
+    "price": 3.99,
+    "category": "Alimentaire"
+  },
+  {
+    "name": "Café arabica 500g",
+    "reference": "ALIM-003",
+    "quantity": 30,
+    "price": 8.99,
+    "category": "Alimentaire"
+  },
+  {
+    "name": "T-shirt coton",
+    "reference": "VET-001",
+    "quantity": 60,
+    "price": 19.99,
+    "category": "Vêtements"
+  },
+  {
+    "name": "Jean slim",
+    "reference": "VET-002",
+    "quantity": 2,
+    "price": 49.99,
+    "category": "Vêtements"
+  },
+  {
+    "name": "Chaise de bureau",
+    "reference": "MOB-001",
+    "quantity": 7,
+    "price": 199.99,
+    "category": "Mobilier"
+  },
+  {
+    "name": "Bureau ajustable",
+    "reference": "MOB-002",
+    "quantity": 5,
+    "price": 299.99,
+    "category": "Mobilier"
+  }
+]
