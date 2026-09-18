@@ -84,5 +84,5 @@ python gestion_stocks.py
 ---
 
 <div align="center">
-  <sub>Développé par <a href="https://github.com/misbaou672">Misbaou DIALLO</a></sub>
+  <sub>Développé par <a href="https://github.com/misbaou672">mikv</a></sub>
 </div>
