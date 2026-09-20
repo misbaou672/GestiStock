@@ -13,6 +13,7 @@ from datetime import datetime, date  # Pour dater les ventes
 import tkinter as tk  # La base de l'interface graphique
 from tkinter import ttk, messagebox, filedialog  # Les widgets en plus
 from collections import defaultdict  # Pratique pour les stats
+from PIL import Image, ImageTk  # Icônes vectorielles épurées
 
 # J'essaie d'importer openpyxl pour Excel.
 # Si c'est pas installé chez l'utilisateur, tant pis : les boutons Excel seront juste désactivés.
@@ -662,25 +663,25 @@ class StockManager:
 #  INTERFACE GRAPHIQUE : le style et les couleurs
 # ─────────────────────────────────────────────
 
-# Ma palette de couleurs pour l'interface sombre
+# Palette de couleurs claire, sobre et professionnelle (Style SaaS / Enterprise Light Mode)
 COLORS = {
-    "bg":      "#0f1117",  # Fond principal (très sombre)
-    "panel":   "#1a1d27",  # Panneaux latéraux
-    "card":    "#22263a",  # Cartes et conteneurs
-    "accent":  "#6c63ff",  # Couleur principale (violet)
-    "accent2": "#00d4aa",  # Secondaire (vert turquoise)
-    "accent3": "#c084fc",  # Tertiaire (violet clair)
-    "danger":  "#ff5370",  # Actions dangereuses (rouge)
-    "warning": "#ffcb6b",  # Alertes (orange)
-    "text":    "#e8eaf6",  # Texte principal
-    "subtext": "#8892b0",  # Texte secondaire
-    "border":  "#2e3250",  # Bordures
-    "entry":   "#151824",  # Champs de saisie
+    "bg":      "#f8fafc",  # Fond principal lumineux (Slate 50)
+    "panel":   "#ffffff",  # Barre latérale blanc pur
+    "card":    "#ffffff",  # Cartes blanches avec bordure
+    "accent":  "#2563eb",  # Bleu professionnel (Royal Blue 600)
+    "accent2": "#059669",  # Vert émeraude
+    "accent3": "#4f46e5",  # Indigo
+    "danger":  "#dc2626",  # Rouge alerte
+    "warning": "#d97706",  # Ambre
+    "text":    "#0f172a",  # Texte principal foncé (Slate 900)
+    "subtext": "#64748b",  # Texte secondaire (Slate 500)
+    "border":  "#e2e8f0",  # Bordures grises très claires (Slate 200)
+    "entry":   "#f1f5f9",  # Champs de saisie (Slate 100)
 }
 
 # Mes polices d'écriture pour un rendu moderne
 FONT_TITLE = ("Segoe UI", 22, "bold")  # Titres principaux
-FONT_HEAD  = ("Segoe UI", 13, "bold")  # Sous-titres
+FONT_HEAD  = ("Segoe UI", 12, "bold")  # Sous-titres
 FONT_LABEL = ("Segoe UI", 10)          # Textes normaux
 FONT_SMALL = ("Segoe UI", 9)           # Petits textes
 FONT_MONO  = ("Consolas", 10)          # Texte monospace
@@ -713,35 +714,42 @@ def make_entry(parent, label, row, default=""):
     tk.Entry(parent, textvariable=var, font=FONT_LABEL,
              bg=COLORS["entry"], fg=COLORS["text"],
              insertbackground=COLORS["text"],
-             relief="flat", bd=0).grid(
-        row=row, column=1, sticky="ew", padx=(0, 16), pady=4, ipady=6)
+             relief="solid", bd=1).grid(
+        row=row, column=1, sticky="ew", padx=(0, 16), pady=4, ipady=4)
     return var
 
 
 def make_button(parent, text, command, color=None, **kwargs):
     """Je crée un bouton moderne avec un style cohérent"""
     color = color or COLORS["accent"]
+    # Si le fond du bouton est clair, on utilise du texte sombre (#0f172a)
+    fg_color = kwargs.pop("fg", None)
+    if not fg_color:
+        if color in (COLORS["card"], COLORS["entry"], COLORS["panel"], "#ffffff", "#f1f5f9", "#f8fafc", "#e2e8f0"):
+            fg_color = COLORS["text"]
+        else:
+            fg_color = "#ffffff"
     return tk.Button(parent, text=text, command=command,
                      font=("Segoe UI", 10, "bold"),
-                     bg=color, fg="white", relief="flat", bd=0,
+                     bg=color, fg=fg_color, relief="flat", bd=0,
                      activebackground=COLORS["bg"], activeforeground=color,
                      cursor="hand2", padx=14, pady=7, **kwargs)
 
 
 def style_tree(tree):
-    """J'applique mon style sombre aux tableaux Treeview"""
+    """J'applique mon style lumineux aux tableaux Treeview"""
     s = ttk.Style()
     s.theme_use("clam")
     
     # Le style des cellules
     s.configure("Custom.Treeview",
-                background=COLORS["card"], foreground=COLORS["text"],
-                fieldbackground=COLORS["card"], rowheight=30,
+                background="#ffffff", foreground="#0f172a",
+                fieldbackground="#ffffff", rowheight=32,
                 font=FONT_LABEL, borderwidth=0)
     
     # Le style des en-têtes
     s.configure("Custom.Treeview.Heading",
-                background=COLORS["panel"], foreground=COLORS["accent"],
+                background="#f1f5f9", foreground="#0f172a",
                 font=("Segoe UI", 10, "bold"), relief="flat")
     
     # Quand on sélectionne une ligne
@@ -794,31 +802,39 @@ class App(tk.Tk):
 
     def _build_sidebar(self):
         """Je construis la barre latérale avec le logo et la navigation"""
+        # Charger les icônes PNG épurées
+        icon_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "icons")
+        self.icons = {}
+        for key in ["products", "sales", "suppliers", "reports", "csv", "excel"]:
+            path = os.path.join(icon_dir, f"{key}.png")
+            if os.path.exists(path):
+                self.icons[key] = ImageTk.PhotoImage(Image.open(path))
+
         # Le logo et le nom de l'app
-        tk.Label(self.sidebar, text="📦", font=("Segoe UI", 32),
-                 bg=COLORS["panel"], fg=COLORS["accent"]).pack(pady=(24, 4))
-        tk.Label(self.sidebar, text="GestiStock", font=("Segoe UI", 14, "bold"),
-                 bg=COLORS["panel"], fg=COLORS["subtext"]).pack(pady=(0, 2))
-        tk.Label(self.sidebar, text="Par Misbaou DIALLO", font=("Segoe UI", 9, "italic"),
+        tk.Label(self.sidebar, text="GESTISTOCK", font=("Segoe UI", 15, "bold"),
+                 bg=COLORS["panel"], fg=COLORS["text"]).pack(pady=(24, 2))
+        tk.Label(self.sidebar, text="GESTION DE STOCK & SUPPLIERS", font=("Segoe UI", 8),
                  bg=COLORS["panel"], fg=COLORS["subtext"]).pack(pady=(0, 16))
 
         # Une petite ligne de séparation
         ttk.Separator(self.sidebar, orient="horizontal").pack(fill="x", padx=16)
 
-        # Mon menu de navigation
+        # Mon menu de navigation avec icônes
         nav_items = [
-            ("🗂   Produits",     "ProductsFrame"),
-            ("💰   Ventes",       "SalesFrame"),
-            ("🏭   Fournisseurs", "SuppliersFrame"),
-            ("📊   Rapports",     "ReportsFrame"),
+            ("  Catalogue Produits",    "ProductsFrame", "products"),
+            ("  Historique Ventes",     "SalesFrame", "sales"),
+            ("  Annuaire Fournisseurs", "SuppliersFrame", "suppliers"),
+            ("  Rapports & Bilans",     "ReportsFrame", "reports"),
         ]
         self.nav_btns = {}
         
-        for label, fname in nav_items:
+        for label, fname, ikey in nav_items:
+            img = self.icons.get(ikey)
             btn = tk.Button(
-                self.sidebar, text=label, font=("Segoe UI", 11),
-                anchor="w", padx=20, pady=10, bd=0, relief="flat",
-                bg=COLORS["panel"], fg=COLORS["text"],
+                self.sidebar, text=label, image=img, compound="left",
+                font=("Segoe UI", 10, "bold"),
+                anchor="w", padx=16, pady=10, bd=0, relief="flat",
+                bg=COLORS["panel"], fg=COLORS["subtext"],
                 activebackground=COLORS["accent"], activeforeground="white",
                 cursor="hand2",
                 command=lambda f=fname: self._show_frame(f),
@@ -832,22 +848,25 @@ class App(tk.Tk):
         btn_area = tk.Frame(self.sidebar, bg=COLORS["panel"])
         btn_area.pack(fill="x", pady=8, padx=8)
 
-        make_button(btn_area, "⬇  Export CSV", self._export_csv,
+        make_button(btn_area, "  Export CSV (.csv)", self._export_csv,
+                    image=self.icons.get("csv"), compound="left",
                     color=COLORS["card"]).pack(fill="x", pady=3)
 
         if EXCEL_OK:
-            make_button(btn_area, "📊  Export Excel (.xlsx)", self._export_excel,
+            make_button(btn_area, "  Export Excel (.xlsx)", self._export_excel,
+                        image=self.icons.get("excel"), compound="left",
                         color=COLORS["card"]).pack(fill="x", pady=3)
-            make_button(btn_area, "📥  Import Excel (.xlsx)", self._import_excel,
+            make_button(btn_area, "  Import Excel (.xlsx)", self._import_excel,
+                        image=self.icons.get("excel"), compound="left",
                         color=COLORS["card"]).pack(fill="x", pady=3)
-        else:
-            tk.Label(btn_area, text="Installez openpyxl\npour Excel",
-                     font=FONT_SMALL, bg=COLORS["panel"],
-                     fg=COLORS["subtext"], justify="center").pack(pady=6)
 
     def _show_frame(self, name):
         for n, btn in self.nav_btns.items():
-            btn.configure(bg=COLORS["accent"] if n == name else COLORS["panel"])
+            is_active = (n == name)
+            btn.configure(
+                bg=COLORS["accent"] if is_active else COLORS["panel"],
+                fg="white" if is_active else COLORS["subtext"]
+            )
         self.frames[name].tkraise()
         self.frames[name].refresh()
 

@@ -1,8 +1,227 @@
 [
-  {"reference": "ELEC-001", "product_name": "Laptop Pro 15", "quantity": 2, "unit_price": 999.99, "total": 1999.98, "category": "Électronique", "date": "2026-03-01"},
-  {"reference": "ELEC-002", "product_name": "Souris sans fil", "quantity": 5, "unit_price": 29.99, "total": 149.95, "category": "Électronique", "date": "2026-03-05"},
-  {"reference": "ALIM-001", "product_name": "Pain de campagne", "quantity": 10, "unit_price": 2.50, "total": 25.00, "category": "Alimentaire", "date": "2026-03-10"},
-  {"reference": "VET-001", "product_name": "T-shirt coton", "quantity": 8, "unit_price": 19.99, "total": 159.92, "category": "Vêtements", "date": "2026-03-12"},
-  {"reference": "ELEC-004", "product_name": "Écran 27 pouces", "quantity": 1, "unit_price": 349.99, "total": 349.99, "category": "Électronique", "date": "2026-03-15"},
-  {"reference": "ALIM-003", "product_name": "Café arabica 500g", "quantity": 4, "unit_price": 8.99, "total": 35.96, "category": "Alimentaire", "date": "2026-03-17"}
+  {
+    "date": "2026-08-28 13:50:59",
+    "product_name": "Disque Dur Externe 2To",
+    "reference": "REF-008",
+    "quantity": 2,
+    "unit_price": 89.99,
+    "total": 179.98,
+    "category": "Stockage"
+  },
+  {
+    "date": "2026-09-15 13:50:59",
+    "product_name": "Clavier Mécanique Corsair",
+    "reference": "REF-003",
+    "quantity": 1,
+    "unit_price": 149.5,
+    "total": 149.5,
+    "category": "Electronique"
+  },
+  {
+    "date": "2026-09-13 13:50:59",
+    "product_name": "Câble HDMI 2m",
+    "reference": "REF-006",
+    "quantity": 2,
+    "unit_price": 9.99,
+    "total": 19.98,
+    "category": "Accessoires"
+  },
+  {
+    "date": "2026-09-02 13:50:59",
+    "product_name": "Disque Dur Externe 2To",
+    "reference": "REF-008",
+    "quantity": 2,
+    "unit_price": 89.99,
+    "total": 179.98,
+    "category": "Stockage"
+  },
+  {
+    "date": "2026-09-19 13:50:59",
+    "product_name": "Casque Audio Sony WH-1000XM4",
+    "reference": "REF-007",
+    "quantity": 3,
+    "unit_price": 349.99,
+    "total": 1049.97,
+    "category": "Audio"
+  },
+  {
+    "date": "2026-08-22 13:50:59",
+    "product_name": "Ordinateur Portable XPS 13",
+    "reference": "REF-001",
+    "quantity": 3,
+    "unit_price": 1299.99,
+    "total": 3899.97,
+    "category": "Electronique"
+  },
+  {
+    "date": "2026-09-01 13:50:59",
+    "product_name": "Casque Audio Sony WH-1000XM4",
+    "reference": "REF-007",
+    "quantity": 2,
+    "unit_price": 349.99,
+    "total": 699.98,
+    "category": "Audio"
+  },
+  {
+    "date": "2026-09-02 13:50:59",
+    "product_name": "Bureau Assis-Debout",
+    "reference": "REF-005",
+    "quantity": 2,
+    "unit_price": 450.0,
+    "total": 900.0,
+    "category": "Mobilier"
+  },
+  {
+    "date": "2026-09-03 13:50:59",
+    "product_name": "Souris Sans Fil Logitech",
+    "reference": "REF-002",
+    "quantity": 1,
+    "unit_price": 29.99,
+    "total": 29.99,
+    "category": "Electronique"
+  },
+  {
+    "date": "2026-09-18 13:50:59",
+    "product_name": "Câble HDMI 2m",
+    "reference": "REF-006",
+    "quantity": 2,
+    "unit_price": 9.99,
+    "total": 19.98,
+    "category": "Accessoires"
+  },
+  {
+    "date": "2026-09-18 13:50:59",
+    "product_name": "Souris Sans Fil Logitech",
+    "reference": "REF-002",
+    "quantity": 2,
+    "unit_price": 29.99,
+    "total": 59.98,
+    "category": "Electronique"
+  },
+  {
+    "date": "2026-09-03 13:50:59",
+    "product_name": "Bureau Assis-Debout",
+    "reference": "REF-005",
+    "quantity": 1,
+    "unit_price": 450.0,
+    "total": 450.0,
+    "category": "Mobilier"
+  },
+  {
+    "date": "2026-08-27 13:50:59",
+    "product_name": "Câble HDMI 2m",
+    "reference": "REF-006",
+    "quantity": 1,
+    "unit_price": 9.99,
+    "total": 9.99,
+    "category": "Accessoires"
+  },
+  {
+    "date": "2026-09-20 13:50:59",
+    "product_name": "Câble HDMI 2m",
+    "reference": "REF-006",
+    "quantity": 2,
+    "unit_price": 9.99,
+    "total": 19.98,
+    "category": "Accessoires"
+  },
+  {
+    "date": "2026-08-21 13:50:59",
+    "product_name": "Clavier Mécanique Corsair",
+    "reference": "REF-003",
+    "quantity": 2,
+    "unit_price": 149.5,
+    "total": 299.0,
+    "category": "Electronique"
+  },
+  {
+    "date": "2026-08-31 13:50:59",
+    "product_name": "Disque Dur Externe 2To",
+    "reference": "REF-008",
+    "quantity": 3,
+    "unit_price": 89.99,
+    "total": 269.97,
+    "category": "Stockage"
+  },
+  {
+    "date": "2026-09-01 13:50:59",
+    "product_name": "Chaise de Bureau Ergonomique",
+    "reference": "REF-004",
+    "quantity": 2,
+    "unit_price": 250.0,
+    "total": 500.0,
+    "category": "Mobilier"
+  },
+  {
+    "date": "2026-08-23 13:50:59",
+    "product_name": "Souris Sans Fil Logitech",
+    "reference": "REF-002",
+    "quantity": 1,
+    "unit_price": 29.99,
+    "total": 29.99,
+    "category": "Electronique"
+  },
+  {
+    "date": "2026-09-20 13:50:59",
+    "product_name": "Souris Sans Fil Logitech",
+    "reference": "REF-002",
+    "quantity": 1,
+    "unit_price": 29.99,
+    "total": 29.99,
+    "category": "Electronique"
+  },
+  {
+    "date": "2026-09-09 13:50:59",
+    "product_name": "Chaise de Bureau Ergonomique",
+    "reference": "REF-004",
+    "quantity": 3,
+    "unit_price": 250.0,
+    "total": 750.0,
+    "category": "Mobilier"
+  },
+  {
+    "date": "2026-09-05 13:50:59",
+    "product_name": "Chaise de Bureau Ergonomique",
+    "reference": "REF-004",
+    "quantity": 1,
+    "unit_price": 250.0,
+    "total": 250.0,
+    "category": "Mobilier"
+  },
+  {
+    "date": "2026-09-17 13:50:59",
+    "product_name": "Disque Dur Externe 2To",
+    "reference": "REF-008",
+    "quantity": 3,
+    "unit_price": 89.99,
+    "total": 269.97,
+    "category": "Stockage"
+  },
+  {
+    "date": "2026-09-12 13:50:59",
+    "product_name": "Bureau Assis-Debout",
+    "reference": "REF-005",
+    "quantity": 2,
+    "unit_price": 450.0,
+    "total": 900.0,
+    "category": "Mobilier"
+  },
+  {
+    "date": "2026-08-30 13:50:59",
+    "product_name": "Ordinateur Portable XPS 13",
+    "reference": "REF-001",
+    "quantity": 3,
+    "unit_price": 1299.99,
+    "total": 3899.97,
+    "category": "Electronique"
+  },
+  {
+    "date": "2026-09-15 13:50:59",
+    "product_name": "Disque Dur Externe 2To",
+    "reference": "REF-008",
+    "quantity": 2,
+    "unit_price": 89.99,
+    "total": 179.98,
+    "category": "Stockage"
+  }
 ]

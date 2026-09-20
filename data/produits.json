@@ -1,72 +1,58 @@
 [
   {
-    "name": "Laptop Pro 15",
-    "reference": "ELEC-001",
+    "name": "Ordinateur Portable XPS 13",
+    "reference": "REF-001",
     "quantity": 12,
-    "price": 999.99,
-    "category": "Électronique"
+    "price": 1299.99,
+    "category": "Electronique"
   },
   {
-    "name": "Souris sans fil",
-    "reference": "ELEC-002",
+    "name": "Souris Sans Fil Logitech",
+    "reference": "REF-002",
     "quantity": 45,
     "price": 29.99,
-    "category": "Électronique"
+    "category": "Electronique"
   },
   {
-    "name": "Clavier mécanique",
-    "reference": "ELEC-003",
+    "name": "Clavier Mécanique Corsair",
+    "reference": "REF-003",
     "quantity": 3,
-    "price": 89.99,
-    "category": "Électronique"
+    "price": 149.5,
+    "category": "Electronique"
   },
   {
-    "name": "Écran 27 pouces",
-    "reference": "ELEC-004",
+    "name": "Chaise de Bureau Ergonomique",
+    "reference": "REF-004",
     "quantity": 8,
-    "price": 349.99,
-    "category": "Électronique"
+    "price": 250.0,
+    "category": "Mobilier"
   },
   {
-    "name": "Jus d'orange bio",
-    "reference": "ALIM-002",
+    "name": "Bureau Assis-Debout",
+    "reference": "REF-005",
     "quantity": 4,
-    "price": 3.99,
-    "category": "Alimentaire"
+    "price": 450.0,
+    "category": "Mobilier"
   },
   {
-    "name": "Café arabica 500g",
-    "reference": "ALIM-003",
-    "quantity": 30,
-    "price": 8.99,
-    "category": "Alimentaire"
+    "name": "Câble HDMI 2m",
+    "reference": "REF-006",
+    "quantity": 120,
+    "price": 9.99,
+    "category": "Accessoires"
   },
   {
-    "name": "T-shirt coton",
-    "reference": "VET-001",
-    "quantity": 60,
-    "price": 19.99,
-    "category": "Vêtements"
+    "name": "Casque Audio Sony WH-1000XM4",
+    "reference": "REF-007",
+    "quantity": 15,
+    "price": 349.99,
+    "category": "Audio"
   },
   {
-    "name": "Jean slim",
-    "reference": "VET-002",
+    "name": "Disque Dur Externe 2To",
+    "reference": "REF-008",
     "quantity": 2,
-    "price": 49.99,
-    "category": "Vêtements"
-  },
-  {
-    "name": "Chaise de bureau",
-    "reference": "MOB-001",
-    "quantity": 7,
-    "price": 199.99,
-    "category": "Mobilier"
-  },
-  {
-    "name": "Bureau ajustable",
-    "reference": "MOB-002",
-    "quantity": 5,
-    "price": 299.99,
-    "category": "Mobilier"
+    "price": 89.99,
+    "category": "Stockage"
   }
 ]
