@@ -8,7 +8,7 @@ Voici quelques exemples de l'interface de l'application :
 
 | Vue d'ensemble du Dashboard | Interface d'Entrées/Sorties |
 | :---: | :---: |
-| <img src="media/gestistock.jpg" width="400" alt="Dashboard GestiStock"> | <img src="media/gestistock-1.jpg" width="400" alt="Gestion des mouvements"> |
+| <img src="media/gestistock.jpg" width="400" alt="Dashboard GestiStock"> | <img src="media/gestistock-2.jpg" width="400" alt="Gestion des mouvements"> |
 
 ## 🚀 Fonctionnalités principales
 
